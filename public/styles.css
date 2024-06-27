@@ -1,0 +1,392 @@
+/* public/styles.css */
+:root {
+    --background-light: #f5f8fa;
+    --background-dark: #15202B;
+    --text-light: #14171A;
+    --text-dark: #ffffff;
+    --primary: #1DA1F2;
+    --secondary: #657786;
+    --border-light: #E1E8ED;
+    --border-dark: #38444D;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-light);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: var(--background-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar.dark-mode {
+    background-color: var(--background-dark);
+    border-color: var(--border-dark);
+}
+
+.navbar a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .toggle-button {
+    background: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .toggle-button:hover {
+    background-color: var(--primary);
+    color: var(--text-dark);
+}
+
+.dark-mode .navbar .toggle-button {
+    color: var(--primary);
+}
+
+.dark-mode .navbar .toggle-button:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: var(--primary);
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.create-post {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.create-post a {
+    background-color: var(--primary);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.create-post a:hover {
+    background-color: #0d8ae6;
+}
+
+form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark-mode form {
+    background-color: var(--background-dark);
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.dark-mode input, .dark-mode textarea {
+    border-color: var(--border-dark);
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--text-dark);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0d8ae6;
+}
+
+.dark-mode button {
+    background-color: var(--primary);
+}
+
+.dark-mode button:hover {
+    background-color: #0d8ae6;
+}
+
+a {
+    color: var(--primary);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid var(--border-light);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.dark-mode li {
+    border-color: var(--border-dark);
+    background-color: var(--background-dark);
+}
+
+.post-content {
+    margin-bottom: 10px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.post-actions button:hover {
+    text-decoration: underline;
+}
+
+.post-actions button:active {
+    transform: scale(0.95);
+}
+
+.post-actions .like, .post-actions .dislike {
+    color: green;
+}
+
+.post-actions .comment, .post-actions .share {
+    color: blue;
+}
+
+.edit-button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.edit-button:hover {
+    background-color: #0d8ae6;
+}
+
+.delete-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+    transition: transform 0.2s;
+}
+
+.delete-button:hover {
+    transform: scale(1.2);
+}
+
+.comments-section {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+}
+
+.comments-section.dark-mode {
+    border-top: 1px solid var(--border-dark);
+}
+
+.comments-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comments-section ul {
+    padding-left: 20px;
+}
+
+.comments-section ul li {
+    margin-bottom: 10px;
+}
+
+@keyframes like-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dislike-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+button.animate-like {
+    animation: like-animation 0.5s ease;
+}
+
+button.animate-dislike {
+    animation: dislike-animation 0.5s ease;
+}
+
+.edit-button {
+    margin-left: 10px; /* Adjust as needed */
+    padding: 5px 10px; /* Adjust padding to give it space */
+    background-color: #007bff; /* Example background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* styles.css */
+
+.edit-section {
+    margin-top: 20px; /* Adjust top margin as needed */
+    margin-bottom: 20px; /* Adjust bottom margin as needed */
+}
+
+.edit-button {
+    padding: 8px 16px; /* Adjust padding as needed */
+    background-color: #007bff; /* Example background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* styles.css */
+
+:root {
+    --background-color: #fff; /* Default light mode background color */
+    --text-color: #333; /* Default light mode text color */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.dark-mode {
+    --background-color: #333; /* Dark mode background color */
+    --text-color: #fff; /* Dark mode text color */
+}
+
+/* Other styles for light mode */
+/* Adjust other element styles as needed */
+
+/* Dark mode specific styles */
+.dark-mode body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+footer {
+    background-color: #051c24;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: xx-small;
+}
+
+footer a {
+    color: #1e90ff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+

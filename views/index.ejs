@@ -1,0 +1,50 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <h1>All Posts</h1>
+    <div class="create-post">
+        <a href="/create">Create New Post</a>
+    </div>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li>
+                <h2><%= post.title %></h2>
+                <p class="post-content"><%= post.content %></p>
+                <div class="post-actions">
+                    <button class="like" onclick="likePost(<%= post.id %>)">👍 Like</button>
+                    <button class="dislike" onclick="dislikePost(<%= post.id %>)">👎 Dislike</button>
+                    <button class="comment" onclick="commentOnPost(<%= post.id %>)">💬 Comment</button>
+                    <button class="share" onclick="sharePost(<%= post.id %>)">🔗 Share</button>
+                </div>
+                <div class="edit-section">
+                    <a href="/edit/<%= post.id %>" class="edit-button">Edit</a>
+                    <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-button">🗑</button>
+                    </form>
+                </div>
+                <div class="comments-section">
+                    <h3>Comments:</h3>
+                    <ul>
+                        <% post.comments.forEach(comment => { %>
+                            <li><%= comment %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+    <footer>
+        <p>&copy; 2024 MyBlog Website. All rights reserved.</p>
+        <p>Developed by Asmita Mandal.</p>
+    </footer>
+    <script src="/scripts.js"></script>
+</body>
+</html>
